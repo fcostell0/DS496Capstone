@@ -8,7 +8,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import classification_report
 
 
-educationData = pd.read_csv('C:/Users/finco/Documents/GitHub/DS496Capstone/Processed Data/educationData.csv')
+educationData = pd.read_csv('C:/Users/finco/Documents/GitHub/DS496Capstone/Processed Data/compressedEducationData.csv')
 raceData = pd.read_csv('C:/Users/finco/Documents/GitHub/DS496Capstone/Processed Data/raceData.csv')
 labels = pd.read_csv('C:/Users/finco/Documents/GitHub/DS496Capstone/Processed Data/electionLabels.csv')
 
