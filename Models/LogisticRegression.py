@@ -18,7 +18,7 @@ data = pd.merge(data, labels, how='inner', on=['state_po', 'year', 'district'])
 y = data['republican_victory']
 X = data.drop(['state_po', 'year', 'district', 'republican_victory'], axis = 1)
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=21)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.15, random_state=21)
 
 pipe_lr = Pipeline([('std', StandardScaler()), ('pca', PCA(n_components=0.95)), ('lr', LogisticRegression())])
 
@@ -35,4 +35,5 @@ lr_gs = GridSearchCV(estimator=pipe_lr, param_grid=lr_param_grid, scoring='f1', 
 lr_gs = lr_gs.fit(X_train, y_train)
 
 print("Best Logistic Regression Model: ")
+print("Model hyper-parameters: ", lr_gs.best_params_)
 print("Training data F1: ", lr_gs.best_score_)
