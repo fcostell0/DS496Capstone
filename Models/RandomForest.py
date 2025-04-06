@@ -7,19 +7,22 @@ from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import classification_report
 
-educationData = pd.read_csv('C:/Users/finco/Documents/GitHub/DS496Capstone/Processed Data/compressedEducationData.csv')
-raceData = pd.read_csv('C:/Users/finco/Documents/GitHub/DS496Capstone/Processed Data/raceData.csv')
-labels = pd.read_csv('C:/Users/finco/Documents/GitHub/DS496Capstone/Processed Data/electionLabels.csv')
+#educationData = pd.read_csv('C:/Users/finco/Documents/GitHub/DS496Capstone/Processed Data/compressedEducationData.csv')
+#raceData = pd.read_csv('C:/Users/finco/Documents/GitHub/DS496Capstone/Processed Data/raceData.csv')
+#labels = pd.read_csv('C:/Users/finco/Documents/GitHub/DS496Capstone/Processed Data/electionLabels.csv')
 
-data = pd.merge(educationData, raceData, how='inner', on=['state_po', 'year', 'district'])
-data = pd.merge(data, labels, how='inner', on=['state_po', 'year', 'district'])
+#data = pd.merge(educationData, raceData, how='inner', on=['state_po', 'year', 'district'])
+#data = pd.merge(data, labels, how='inner', on=['state_po', 'year', 'district'])
+
+data = pd.read_csv('C:/Users/finco/Documents/GitHub/DS496Capstone/Processed Data/finalData.csv')
+
 
 y = data['republican_victory']
 X = data.drop(['state_po', 'year', 'district', 'republican_victory'], axis = 1)
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.15, random_state=21)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=21)
 
-pipe_rf = Pipeline([('std', StandardScaler()), ('pca', PCA(n_components=0.95)), ('rf', RandomForestClassifier())])
+pipe_rf = Pipeline([('std', StandardScaler()), ('rf', RandomForestClassifier())])
 rf_param_grid = {
     'rf__n_estimators':[100, 500, 1000],
     'rf__criterion':['gini', 'entropy', 'log_loss'],
