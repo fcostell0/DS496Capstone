@@ -26,7 +26,7 @@ param_range = [0.01, 0.1, 1, 10, 100]
 
 lr_param_grid = {
     'lr__C':param_range,
-    'lr__solver':['lbgfs', 'liblinear', 'newton-cg', 'newton-cholesky', 'sag', 'saga'],
+    'lr__solver':['lbfgs', 'liblinear', 'newton-cg', 'newton-cholesky', 'sag', 'saga'],
     'lr__max_iter':[100, 500, 1000]
 }
 
