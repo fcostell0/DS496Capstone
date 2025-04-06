@@ -27,7 +27,7 @@ param_range = [0.01, 0.1, 1, 10, 100]
 lr_param_grid = {
     'lr__C':param_range,
     'lr__solver':['lbgfs', 'liblinear', 'newton-cg', 'newton-cholesky', 'sag', 'saga'],
-    'lr__max_iter':[100, 200, 300]
+    'lr__max_iter':[100, 500, 1000]
 }
 
 lr_gs = GridSearchCV(estimator=pipe_lr, param_grid=lr_param_grid, scoring='f1', refit=True, cv=10, verbose=3)
@@ -35,12 +35,4 @@ lr_gs = GridSearchCV(estimator=pipe_lr, param_grid=lr_param_grid, scoring='f1', 
 lr_gs = lr_gs.fit(X_train, y_train)
 
 print("Best Logistic Regression Model: ")
-print("Training data F1 score: ", lr_gs.best_score_)
-print("Model parameters: ", lr_gs.best_params_)
-print()
-
-best_model = lr_gs.best_estimator_
-
-y_pred = best_model.predict(X_test)
-class_report = classification_report(y_test, y_pred)
-print(class_report)
+print("Training data F1: ", lr_gs.best_score_)

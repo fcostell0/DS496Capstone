@@ -32,11 +32,3 @@ RF_gs = RF_gs.fit(X_train, y_train)
 
 print("Best Random Forest Model: ")
 print("Training data F1 score: ", RF_gs.best_score_)
-print("Model parameters: ", RF_gs.best_params_)
-print()
-
-best_model = RF_gs.best_estimator_
-
-y_pred = best_model.predict(X_test)
-class_report = classification_report(y_test, y_pred)
-print(class_report)
