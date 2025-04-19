@@ -38,4 +38,8 @@ lr_gs = lr_gs.fit(X_train, y_train)
 
 print("Best Logistic Regression Model: ")
 print("Model hyper-parameters: ", lr_gs.best_params_)
-print("Training data F1: ", lr_gs.best_score_)
+print("Validation data F1: ", lr_gs.best_score_)
+
+print("Training Classification Report: ")
+y_train_pred = lr_gs.best_estimator_.predict(X_train)
+print(classification_report(y_train, y_train_pred))
