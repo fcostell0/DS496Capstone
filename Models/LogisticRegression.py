@@ -16,12 +16,13 @@ from sklearn.metrics import classification_report
 #data = pd.merge(data, labels, how='inner', on=['state_po', 'year', 'district'])
 
 data = pd.read_csv('C:/Users/finco/Documents/GitHub/DS496Capstone/Processed Data/finalData.csv')
-futureData = data[data['year'] == 2026]
+futureData = data[data['year'] == 2026].drop(['republican_victory'], axis=1)
 data = data[data['year'] != 2026]
 
 
-y = data['republican_victory']
+y = data['republican_victory'].astype(bool)
 X = data.drop(['state_po', 'year', 'district', 'republican_victory'], axis = 1)
+futureX = futureData.drop(['state_po', 'year', 'district',], axis = 1)
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=21)
 
@@ -46,3 +47,10 @@ print("Validation data F1: ", lr_gs.best_score_)
 print("Training Classification Report: ")
 y_train_pred = lr_gs.best_estimator_.predict(X_train)
 print(classification_report(y_train, y_train_pred))
+
+print("Final Classification Report: ")
+y_pred = lr_gs.best_estimator_.predict(X_test)
+print(classification_report(y_test, y_pred))
+
+futureData['Republican Prob'] = lr_gs.best_estimator_.predict_proba(futureX)[:,1]
+futureData.to_csv('C:/Users/finco/Documents/GitHub/DS496Capstone/2026 Predictions/FutureModelPredictionData.csv', index=False)

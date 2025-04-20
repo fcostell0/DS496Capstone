@@ -24,4 +24,5 @@ data = pd.merge(data, electionData, how='inner', on=['state_po', 'district', 'ye
 
 filteredData = data[~data[['state_po', 'year']].apply(tuple, axis=1).isin(midCycleRedistrictingSet)]
 
+
 filteredData.to_csv('C:/Users/finco/Documents/GitHub/DS496Capstone/Processed Data/finalData.csv', index = False)

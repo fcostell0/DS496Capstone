@@ -3057,7 +3057,7 @@ year,state_po,district,republican_victory,republican_president,midterm,pvi
 2026,AZ,3,,True,True,-22.0
 2026,AZ,4,,True,True,-4.0
 2026,AZ,5,,True,True,10.0
-2026,AZ,6,,True,True,
+2026,AZ,6,,True,True,0.0
 2026,AZ,7,,True,True,-13.0
 2026,AZ,8,,True,True,8.0
 2026,AZ,9,,True,True,15.0
@@ -3124,7 +3124,7 @@ year,state_po,district,republican_victory,republican_president,midterm,pvi
 2026,CO,5,,True,True,5.0
 2026,CO,6,,True,True,-11.0
 2026,CO,7,,True,True,-8.0
-2026,CO,8,,True,True,
+2026,CO,8,,True,True,0.0
 2026,CT,1,,True,True,-12.0
 2026,CT,2,,True,True,-4.0
 2026,CT,3,,True,True,-8.0
@@ -3248,7 +3248,7 @@ year,state_po,district,republican_victory,republican_president,midterm,pvi
 2026,MI,4,,True,True,3.0
 2026,MI,5,,True,True,13.0
 2026,MI,6,,True,True,-12.0
-2026,MI,7,,True,True,
+2026,MI,7,,True,True,0.0
 2026,MI,8,,True,True,1.0
 2026,MI,9,,True,True,16.0
 2026,MI,10,,True,True,3.0
@@ -3292,18 +3292,18 @@ year,state_po,district,republican_victory,republican_president,midterm,pvi
 2026,NJ,4,,True,True,14.0
 2026,NJ,5,,True,True,-2.0
 2026,NJ,6,,True,True,-5.0
-2026,NJ,7,,True,True,
+2026,NJ,7,,True,True,0.0
 2026,NJ,8,,True,True,-15.0
 2026,NJ,9,,True,True,-2.0
 2026,NJ,10,,True,True,-27.0
 2026,NJ,11,,True,True,-5.0
 2026,NJ,12,,True,True,-13.0
 2026,NM,1,,True,True,-7.0
-2026,NM,2,,True,True,
+2026,NM,2,,True,True,0.0
 2026,NM,3,,True,True,-3.0
 2026,NY,1,,True,True,4.0
 2026,NY,2,,True,True,6.0
-2026,NY,3,,True,True,
+2026,NY,3,,True,True,0.0
 2026,NY,4,,True,True,-2.0
 2026,NY,5,,True,True,-24.0
 2026,NY,6,,True,True,-6.0
@@ -3354,7 +3354,7 @@ year,state_po,district,republican_victory,republican_president,midterm,pvi
 2026,OH,10,,True,True,3.0
 2026,OH,11,,True,True,-28.0
 2026,OH,12,,True,True,16.0
-2026,OH,13,,True,True,
+2026,OH,13,,True,True,0.0
 2026,OH,14,,True,True,9.0
 2026,OH,15,,True,True,4.0
 2026,OK,1,,True,True,11.0
@@ -3437,7 +3437,7 @@ year,state_po,district,republican_victory,republican_president,midterm,pvi
 2026,TX,31,,True,True,11.0
 2026,TX,32,,True,True,-13.0
 2026,TX,33,,True,True,-19.0
-2026,TX,34,,True,True,
+2026,TX,34,,True,True,0.0
 2026,TX,35,,True,True,-19.0
 2026,TX,36,,True,True,18.0
 2026,TX,37,,True,True,-26.0
@@ -3448,7 +3448,7 @@ year,state_po,district,republican_victory,republican_president,midterm,pvi
 2026,UT,4,,True,True,14.0
 2026,VT,0,,True,True,-17.0
 2026,VA,1,,True,True,3.0
-2026,VA,2,,True,True,
+2026,VA,2,,True,True,0.0
 2026,VA,3,,True,True,-18.0
 2026,VA,4,,True,True,-17.0
 2026,VA,5,,True,True,6.0
