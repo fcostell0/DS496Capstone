@@ -23,6 +23,7 @@ data = pd.merge(educationData, raceData, how='inner', on=['state_po', 'district'
 data = pd.merge(data, electionData, how='inner', on=['state_po', 'district', 'year'])
 
 filteredData = data[~data[['state_po', 'year']].apply(tuple, axis=1).isin(midCycleRedistrictingSet)]
+filteredData = filteredData.drop(['NonCollegeGrad', 'MedianEarnings'], axis=1)
 
 
 filteredData.to_csv('C:/Users/finco/Documents/GitHub/DS496Capstone/Processed Data/finalData.csv', index = False)
