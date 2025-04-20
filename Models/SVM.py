@@ -7,20 +7,16 @@ from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import classification_report
 
-#educationData = pd.read_csv('C:/Users/finco/Documents/GitHub/DS496Capstone/Processed Data/compressedEducationData.csv')
-#raceData = pd.read_csv('C:/Users/finco/Documents/GitHub/DS496Capstone/Processed Data/raceData.csv')
-#labels = pd.read_csv('C:/Users/finco/Documents/GitHub/DS496Capstone/Processed Data/electionLabels.csv')
-
-#data = pd.merge(educationData, raceData, how='inner', on=['state_po', 'year', 'district'])
-#data = pd.merge(data, labels, how='inner', on=['state_po', 'year', 'district'])
-
 data = pd.read_csv('C:/Users/finco/Documents/GitHub/DS496Capstone/Processed Data/finalData.csv')
+futureData = data[data['year'] == 2026].drop(['republican_victory'], axis=1)
+data = data[data['year'] != 2026]
 
 
-y = data['republican_victory']
+y = data['republican_victory'].astype(bool)
 X = data.drop(['state_po', 'year', 'district', 'republican_victory'], axis = 1)
+futureX = futureData.drop(['state_po', 'year', 'district',], axis = 1)
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.15, random_state=21)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=21)
 
 pipe_svm = Pipeline([('std', StandardScaler()), ('svc', SVC())])
 
@@ -36,4 +32,8 @@ SVM_gs = SVM_gs.fit(X_train, y_train)
 
 print("Best SVM Model: ")
 print("Model hyper-parameters: ", SVM_gs.best_params_)
-print("Training data F1 score: ", SVM_gs.best_score_)
+print("Validation data F1: ", SVM_gs.best_score_)
+
+print("Training Classification Report: ")
+y_train_pred = SVM_gs.best_estimator_.predict(X_train)
+print(classification_report(y_train, y_train_pred))
