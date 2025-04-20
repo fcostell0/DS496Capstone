@@ -19,6 +19,7 @@ data = pd.read_csv('C:/Users/finco/Documents/GitHub/DS496Capstone/Processed Data
 futureData = data[data['year'] == 2026]
 data = data[data['year'] != 2026]
 
+
 y = data['republican_victory']
 X = data.drop(['state_po', 'year', 'district', 'republican_victory'], axis = 1)
 
