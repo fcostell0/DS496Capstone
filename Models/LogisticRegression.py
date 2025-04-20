@@ -16,6 +16,8 @@ from sklearn.metrics import classification_report
 #data = pd.merge(data, labels, how='inner', on=['state_po', 'year', 'district'])
 
 data = pd.read_csv('C:/Users/finco/Documents/GitHub/DS496Capstone/Processed Data/finalData.csv')
+futureData = data[data['year'] == 2026]
+data = data[data['year'] != 2026]
 
 y = data['republican_victory']
 X = data.drop(['state_po', 'year', 'district', 'republican_victory'], axis = 1)
